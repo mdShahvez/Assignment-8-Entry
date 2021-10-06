@@ -8,7 +8,9 @@ require('dotenv').config()
 const url=process.env.url
 const API_KEY=process.env.API_KEY;
 
-
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 mongoose.connect(`${url}`)
 .then(()=>{
     console.log("DB CONNECTED")
