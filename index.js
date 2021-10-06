@@ -13,7 +13,7 @@ mongoose.connect(`${url}`)
 .then(()=>{
     console.log("DB CONNECTED")
 })
-.catch((er)=>{
+.catch((err)=>{
     console.log(err)
 })
 app.set('view engine','ejs');
