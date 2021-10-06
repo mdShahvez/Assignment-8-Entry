@@ -31,7 +31,12 @@ app.get('/home/enter',(req,res)=>{
     res.render('enter');
 })
 app.post('/home',async(req,res)=>{
-    const {name,email,phone,cinh,cinm}=req.body;
+   // const {name,email,phone,cinh,cinm}=req.body;
+    const name=req.body.name;
+    const email=req.body.email;
+    const phone=req.body.phone;
+    const cinh=req.body.cinh+"";
+const cinm=req.body.cinm+"";
     sendemail(email,cinh,cinm);
     await Data.create({name,email,phone,cinh,cinm});
     res.redirect('/');
@@ -62,10 +67,10 @@ function sendemail(email,cinh,cinm){
     const sgMail=require('@sendgrid/mail');
    const  sendgrid=`${API_KEY}`;
   sgMail.setApiKey(sendgrid);
-  let m=cinm.toString();
-  let h=cinh.toString();;
+  let m=cinm;//.toString();
+  let h=cinh;//.toString();
   if(cinm<=9){
-      m='0'+cinm.toString();
+      m='0'+cinm;//.toString();
   }
   if(cinh<=9){
       h='0'+cinh.toString();

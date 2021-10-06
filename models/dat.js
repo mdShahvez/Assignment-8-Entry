@@ -16,19 +16,19 @@ const dataschema=new mongoose.Schema({
         trim:true,
     },
     cinh:{
-        type:Number,
+        type:String,
         min:0,
         max:23,
         required:true,
     },
     cinm:{
-        type:Number,
+        type:String,
         min:0,
         max:59,
         required:true,
     },
     couth:{
-        type:Number,
+        type:String,
         min:0,
         max:23,
     },
